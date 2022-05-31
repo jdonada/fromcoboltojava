@@ -16,7 +16,7 @@ public abstract class Figura {
 	public abstract  float calcularperimetro();
 	public abstract  float calcularSuperficie();		
 	
-	public float getMaximasuperficie() {
+	protected float getMaximasuperficie() {
 		return maximasuperficie;
 	}
 	public void setMaximasuperficie(float maximasuperficie) {
@@ -59,9 +59,6 @@ public abstract class Figura {
 	@Override
 	public String toString() {
 		return "Figura [maximasuperficie=" + maximasuperficie + ", nombre=" + nombre + "]";
-	}
-	
-	
-	
+	}			
 	
 }
