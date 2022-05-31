@@ -1,7 +1,7 @@
 package modelo;
 
 public class Alumno extends Persona {
-	int legajo;
+	private int legajo;
 
 	public Alumno() {
 		legajo = 100;

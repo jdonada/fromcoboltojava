@@ -2,7 +2,7 @@ package modelo;
 
 public class Circulo extends Figura {
 	
-	float radio;
+	private float radio;
 
 	@Override
 	public float calcularperimetro() {
@@ -16,10 +16,12 @@ public class Circulo extends Figura {
 
 	public Circulo() {
 		super();
+		radio = 0;
 	}
 
-	public Circulo( float pMaximasuperficie, String pNombre, float pRadio) {
-		super(pMaximasuperficie, pNombre);
+	public Circulo(String pNombre, float pRadio) {
+		
+		super(pNombre);
 		radio = pRadio;		
 	}
 
@@ -55,8 +57,10 @@ public class Circulo extends Figura {
 
 	@Override
 	public String toString() {
-		return "Circulo [radio=" + radio + ", maximasuperficie=" + maximasuperficie + ", nombre=" + nombre + "]";
+		return "Circulo [radio=" + radio + ", maximasuperficie=" + maximasuperficie + "]";
 	}
+
+
 		
 
 }

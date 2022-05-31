@@ -1,16 +1,15 @@
 package modelo;
 
 public abstract class Figura {
-	float maximasuperficie;
-	String nombre;		
+	protected float maximasuperficie;
+	private String nombre;		
 	
 	public Figura() {
 		this.maximasuperficie = 0;
 		this.nombre 	 	  = "figura";
 	}
 	
-	public Figura(float maximasuperficie, String nombre) {
-		this.maximasuperficie = maximasuperficie;
+	public Figura(String nombre) {
 		this.nombre = nombre;
 	}
 	
