@@ -56,6 +56,13 @@ public abstract class Figura {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "Figura [maximasuperficie=" + maximasuperficie + ", nombre=" + nombre + "]";
+	}
+	
+	
 	
 	
 }
