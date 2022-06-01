@@ -4,7 +4,7 @@ public class Alumno extends Persona {
 	private int legajo;
 
 	public Alumno() {
-		legajo = 100;
+		legajo = 100;		
 	}
 
 	public Alumno(int legajo) {

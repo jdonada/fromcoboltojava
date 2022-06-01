@@ -2,7 +2,7 @@ package modelo;
 
 public class Profesor extends Persona {
 	
-	String iosfa;
+	private String iosfa;
 
 	public Profesor() {
 		super();

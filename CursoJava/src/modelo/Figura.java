@@ -29,36 +29,30 @@ public abstract class Figura {
 		this.nombre = nombre;
 	}
 	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + Float.floatToIntBits(maximasuperficie);
-		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-		return result;
+	public int hashCode() {				
+		return Float.floatToIntBits(maximasuperficie) + nombre.hashCode();
 	}
 	
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (!(obj instanceof Figura))
-			return false;
-		Figura other = (Figura) obj;
-		if (Float.floatToIntBits(maximasuperficie) != Float.floatToIntBits(other.maximasuperficie))
-			return false;
-		if (nombre == null) {
-			if (other.nombre != null)
-				return false;
-		} else if (!nombre.equals(other.nombre))
-			return false;
-		return true;
+		boolean bln = false;
+		if (obj instanceof Figura) {
+			Figura fig = (Figura)obj;
+			bln = nombre           == fig.getNombre() &&
+				  maximasuperficie == fig.getMaximasuperficie();					
+		}
+		return bln;
 	}
 
 	@Override
 	public String toString() {
-		return "Figura [maximasuperficie=" + maximasuperficie + ", nombre=" + nombre + "]";
+		StringBuilder sb = new StringBuilder("\nnombre=");
+		sb.append(nombre);
+		sb.append(",maximasuperficie=");
+		sb.append(maximasuperficie);	
+		
+		return sb.toString();
+
 	}			
 	
 }
