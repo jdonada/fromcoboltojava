@@ -8,12 +8,13 @@ public class Triangulo extends Figura {
 
 	@Override
 	public float calcularperimetro() {
-		return 0;
+		return lado1+lado2+lado3;
 	}
 
 	@Override
 	public float calcularSuperficie() {		
-		return 0;
+	    float s = (lado1+lado2+lado3)/2;
+	    return (float)Math.sqrt(s*((s-lado1)*(s-lado2)*(s-lado3)));
 	}
 
 	public Triangulo() {
@@ -26,7 +27,6 @@ public class Triangulo extends Figura {
 	public Triangulo(String nombre) {
 		super(nombre); 
 	}
-	
 	
 
 }
