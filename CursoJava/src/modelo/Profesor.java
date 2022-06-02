@@ -29,32 +29,22 @@ public class Profesor extends Persona {
 
 	@Override
 	public String toString() {
-		return "Profesor [iosfa=" + iosfa + "]";
+		StringBuilder sb = new StringBuilder(super.toString());
+    	sb.append(",iosfa=");
+    	sb.append(iosfa);
+    	return sb.toString();
 	}
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = super.hashCode();
-		result = prime * result + ((iosfa == null) ? 0 : iosfa.hashCode());
-		return result;
+		return super.hashCode() + iosfa.hashCode();
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!super.equals(obj))
-			return false;
-		if (!(obj instanceof Profesor))
-			return false;
-		Profesor other = (Profesor) obj;
-		if (iosfa == null) {
-			if (other.iosfa != null)
-				return false;
-		} else if (!iosfa.equals(other.iosfa))
-			return false;
-		return true;
+		return  super.equals(obj) 		&&
+				obj instanceof Profesor &&
+				iosfa == ((Profesor)obj).getIosfa();	
 	}
 	
 	

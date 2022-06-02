@@ -33,38 +33,24 @@ public abstract class Persona {
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((apellido == null) ? 0 : apellido.hashCode());
-		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-		return result;
+		return apellido.hashCode() + nombre.hashCode();
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (!(obj instanceof Persona))
-			return false;
-		Persona other = (Persona) obj;
-		if (apellido == null) {
-			if (other.apellido != null)
-				return false;
-		} else if (!apellido.equals(other.apellido))
-			return false;
-		if (nombre == null) {
-			if (other.nombre != null)
-				return false;
-		} else if (!nombre.equals(other.nombre))
-			return false;
-		return true;
+		return  obj instanceof Persona                 &&
+				nombre   == ((Persona)obj).getNombre() &&
+				apellido == ((Persona)obj).getApellido();		
 	}
 
 	@Override
 	public String toString() {
-		return "Persona [apellido=" + apellido + ", nombre=" + nombre + "]";
+		StringBuilder sb = new StringBuilder();
+    	sb.append(",nombre=");
+    	sb.append(nombre);
+    	sb.append(",apellido=");
+    	sb.append(apellido);
+    	return sb.toString();
 	}	
 
 }

@@ -27,8 +27,22 @@ public class Alumno extends Persona {
 
 	@Override
 	public String toString() {
-		//super.toString();
-		return "Alumno [legajo=" + legajo + "]";
+		StringBuilder sb = new StringBuilder(super.toString());
+    	sb.append(",legajo=");
+    	sb.append(legajo);
+    	return sb.toString();
+	}
+	
+	@Override
+	public int hashCode() {
+		return super.hashCode() + legajo;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		return  super.equals(obj) 		&&
+				obj instanceof Alumno &&
+				legajo == ((Alumno)obj).getLegajo();	
 	}
 	
 }
