@@ -24,18 +24,21 @@ public class ConnectionManagerTest {
 		con=null;
 	}
 	
+	
 	@Test
 	public void testConectarYGetConection() {
 		try {
 			ConnectionManager.conectar();
-			assertNotNull(ConnectionManager.getConection());
-			
-		} catch (ClassNotFoundException | SQLException e) {
+			assertNotNull(ConnectionManager.getConection());			
+		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			assertTrue(false);
-			
+			assertTrue(false);			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			assertTrue(false);			
 		}
 	}
+	
 	@Test
 	public void testDesconectar() throws SQLException {
 		ConnectionManager.desConectar();

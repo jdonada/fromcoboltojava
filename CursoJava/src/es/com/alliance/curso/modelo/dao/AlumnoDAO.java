@@ -28,7 +28,7 @@ public class AlumnoDAO implements DAO {
 					  				.append							("values (?,?,?,?,?)"					);
 		
 	    //downCast
-		Alumno alu = (Alumno)pModel;
+		Alumno alu = (Alumno)pModel;		
 		
 		PreparedStatement stm = conexion.prepareStatement(sql.toString()); 
 		stm.setString(1, alu.getNombre());
